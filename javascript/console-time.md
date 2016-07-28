@@ -5,5 +5,5 @@ console.time('identifier');
 for(var i = 0; i < 5000; i++) {
   someExpensiveCalculation();
 }
-console.timeEnd('identifier');
+console.timeEnd('identifier'); // identifier: 70.4 ms
 ```
