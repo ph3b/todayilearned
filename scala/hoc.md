@@ -71,10 +71,10 @@ val array = sc.parallelize(Array(
 (30, 10), 
 (30, 15) 
 ))
-val averageTuples = array
-    .mapValues(x => (x, 1))
-    .reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2))
-    .mapValues(y => 1.0 * y._1 / y._2).collect
+
+val averageTuples = array.mapValues(x => (x, 1)).reduceByKey((x, y) => (x._1 + y._1, x._2 + y._2)).mapValues(y => 1.0 * y._1 / y._2)
+averageTuples.foreach(println)
 ```
 ![alt text](https://i.stack.imgur.com/vAWTK.jpg)
+
 Source: http://stackoverflow.com/a/40101724
